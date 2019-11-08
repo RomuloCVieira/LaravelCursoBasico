@@ -5,6 +5,7 @@
             <th>Nome</th>
             <th>data de Cadastro</th>
             <th>data da Ultima atualização</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -14,11 +15,13 @@
                 <td><a href="/categorias/{{$value->id}}">{{$value->nome}}</a></td>
                 <td>{{$value->created_at}}</td>
                 <td>{{$value->updated_at}}</td>
+                <td><button><a href="/categorias/{{$value->id}}/edit">Editar</a></button></td>
             </tr>
         @endforeach
     </tbody>
     <tfoot>
         <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

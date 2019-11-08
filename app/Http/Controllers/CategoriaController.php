@@ -63,7 +63,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        //
+        return view('categorias.edit',compact('categoria'));
     }
 
     /**
@@ -75,7 +75,9 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $categoria)
     {
-        //
+        $categoria->nome = $request->nome;
+        $categoria->save();
+        return redirect('categorias');
     }
 
     /**
