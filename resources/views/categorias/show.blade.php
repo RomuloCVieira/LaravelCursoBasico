@@ -1,0 +1,1 @@
+<h1>{{$categoria->nome}}</h1>

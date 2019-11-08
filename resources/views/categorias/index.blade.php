@@ -11,8 +11,8 @@
         @foreach ($categorias as $value)
             <tr>
                 <td>{{$value->id}}</td>
-                <td>{{$value->nome}}</td>
-                <td>{{$value->create_at}}</td>
+                <td><a href="/categorias/{{$value->id}}">{{$value->nome}}</a></td>
+                <td>{{$value->created_at}}</td>
                 <td>{{$value->updated_at}}</td>
             </tr>
         @endforeach
