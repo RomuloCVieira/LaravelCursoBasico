@@ -23,3 +23,4 @@ Route::get('/', function () {
 // }) ;
 Route::get('/gritar','GritarController@gritar');
 Route::get('/gritar/{numero}','GritarController@gritarMultiplo');
+Route::resource('categorias','CategoriaController');
