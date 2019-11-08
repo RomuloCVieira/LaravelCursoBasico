@@ -15,7 +15,14 @@
                 <td><a href="/categorias/{{$value->id}}">{{$value->nome}}</a></td>
                 <td>{{$value->created_at}}</td>
                 <td>{{$value->updated_at}}</td>
-                <td><button><a href="/categorias/{{$value->id}}/edit">Editar</a></button></td>
+                <td>
+                    <button><a href="/categorias/{{$value->id}}/edit">Editar</a></button>
+                    <form action="/categorias/{{$value->id}}" method="POST">
+                        {{csrf_field()}}
+                        {{method_field('delete')}}
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </tbody>
