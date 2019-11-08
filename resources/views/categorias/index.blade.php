@@ -17,4 +17,12 @@
             </tr>
         @endforeach
     </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button><a href="/categorias/create">nova categoria</a></button></td>
+        </tr>
+    </tfoot>
 </table>
