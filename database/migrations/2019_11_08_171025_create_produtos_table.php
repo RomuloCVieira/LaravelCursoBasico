@@ -19,7 +19,7 @@ class CreateProdutosTable extends Migration
             $table->integer('qtde');
             $table->float('valor');
             $table->string('foto',30);
-            $table->text('descricao',500);
+            $table->text('descricao',500)->nullable();
             $table->string('cor',30);
             $table->integer('categoria_id')->unsigned();
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('set null');
