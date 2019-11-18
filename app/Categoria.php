@@ -9,6 +9,6 @@ class Categoria extends Model
     public function produtos()
     {
         return $this->hasMany('App\Produto');
-        // Uma categoria pode ter muitas diciplinas 
+        // Uma categoria pode ter muitas produtos
     }
 }

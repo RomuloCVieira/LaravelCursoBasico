@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Produto;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -90,5 +92,24 @@ class CategoriaController extends Controller
     {
         $categoria->delete();
         return redirect('categorias');
+    }
+    
+    public function createProduto($categoria_id)
+    {
+        return view('categorias.produtos.create',compact('categoria_id'));
+    }
+
+    public function storeProduto(Request $request, Categoria $categoria_id)
+    {
+        $produto  = new Produto();
+        $produto->nome          = $request->nome;
+        $produto->qtde          = $request->qtde;
+        $produto->valor         = $request->valor;
+        $produto->foto          = $request->foto;
+        $produto->descricao     = $request->descricao;
+        $produto->cor           = $request->cor;
+        $produto->categoria_id  = $categoria_id->id;
+        $categoria_id->produtos()->save($produto);
+        return redirect("/categorias/$categoria_id->id");
     }
 }
