@@ -16,7 +16,7 @@ class CategoriaController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['index','show']);
+        $this->middleware('auth')->except(['index','show','search']);
     }
     public function index()
     {
@@ -115,5 +115,12 @@ class CategoriaController extends Controller
         $produto->categoria_id  = $categoria_id->id;
         $categoria_id->produtos()->save($produto);
         return redirect("/categorias/$categoria_id->id");
+    }
+    public function search(Request $request)
+    {
+        $text = $request->text;
+        var_dump($text);
+        $categorias = Categoria::where('nome','LIKE', "%{$text}%")->get();
+        return view('categorias.index',compact('categorias'));
     }
 }

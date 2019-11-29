@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 <table border="1">
     <thead>
         <tr>

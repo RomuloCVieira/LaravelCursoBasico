@@ -29,3 +29,5 @@ Route::post('categorias/{categoria_id}/produtos','CategoriaController@storeProdu
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/categorias/search','CategoriaController@search');
