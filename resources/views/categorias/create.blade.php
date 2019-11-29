@@ -1,3 +1,4 @@
+@extends('layouts.master')
 <form action="/categorias" method="POST">
     {{csrf_field()}}
     <label>Nome:</label>

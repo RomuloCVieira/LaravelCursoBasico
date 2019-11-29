@@ -1,3 +1,4 @@
+@extends('layouts.master')
 <form action="/categorias/{{$categoria_id}}/produtos" method="POST">
     {{csrf_field()}}
     <div class="form-group">
